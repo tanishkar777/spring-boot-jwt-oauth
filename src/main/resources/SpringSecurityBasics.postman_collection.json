@@ -1,0 +1,286 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SpringSecurityBasics",
+		"_postman_id": "ca0a02e8-7938-455d-250c-77544317b2d1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8099/jwt-practice/welcome?name=Tanish",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8099/jwt-practice/welcome?name=Tanish",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8099",
+					"path": [
+						"jwt-practice",
+						"welcome"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tanish",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic abcderfg",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8099/jwt-practice/save",
+			"request": {
+				"url": "http://localhost:8099/jwt-practice/save",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\n\t\"id\" : 1,\n\t\"name\" : \"Tanish\",\n\t\"password\" : \"password1\",\n\t\"email\" : \"tanish@gmail.com\",\n\t\"roles\" : \"ROLE_ADMIN\"\n},\n{\n\t\n\t\"id\" : 2,\n\t\"name\" : \"Raj\",\n\t\"password\" : \"password2\",\n\t\"email\" : \"raj@gmail.com\",\n\t\"roles\" : \"ROLE_USER\"\n},{\n\t\n\t\"id\" : 3,\n\t\"name\" : \"Rohit\",\n\t\"password\" : \"password3\",\n\t\"email\" : \"Rohit@gmail.com\",\n\t\"roles\" : \"ROLE_ADMIN,ROLE_USER\"\n}]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8099/jwt-practice/getEmployees",
+			"request": {
+				"url": "http://localhost:8099/jwt-practice/getEmployees",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8099/jwt-practice/getAllProducts",
+			"request": {
+				"url": "http://localhost:8099/jwt-practice/getAllProducts",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSYWoiLCJpYXQiOjE2OTcyMTE4MjcsImV4cCI6MTY5NzIxNDUyNywiaXNzIjoiSnd0LUZlZGVyYXRpb24ifQ.f4F9mBu6Bd-TJd1mZ-dne3QK0drAATkUubw3paQHJtA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8099/jwt-practice/authenticate",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8099/jwt-practice/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8099",
+					"path": [
+						"jwt-practice",
+						"authenticate"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tanish",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "password1",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"Rajtest\",\n\t\"password\" : \"password2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8099/jwt-practice/getProductById/5",
+			"request": {
+				"url": "http://localhost:8099/jwt-practice/getProductById/5",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSYWoiLCJpYXQiOjE2OTcyMTE4MjcsImV4cCI6MTY5NzIxNDUyNywiaXNzIjoiSnd0LUZlZGVyYXRpb24ifQ.f4F9mBu6Bd-TJd1mZ-dne3QK0drAATkUubw3paQHJtA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8085/realms/Dev/protocol/openid-connect/token",
+			"request": {
+				"url": "http://localhost:8085/realms/Dev/protocol/openid-connect/token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "TestClient_2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "iN0TtaEekQpkkhs6JlVQ6Ysl1rS8hkiw",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid ",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "aeb76c43-f4e2-441d-aacc-f956baa9ef27.9f151c39-42de-4ea9-bcfc-7aea5e2dc457.2ae19497-562e-4747-af42-5ba79a0c33d2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8099/jwt-practice/welcome",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8085/realms/Dev/protocol/openid-connect/auth?response_type=code&client_id=TestClient_2&scope=openid&state=1234jklmnopqrst$$$$&redirect_uri=http://localhost:8099/jwt-practice/welcome",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8085/realms/Dev/protocol/openid-connect/auth?response_type=code&client_id=TestClient_2&scope=openid&state=1234jklmnopqrst$$$$&redirect_uri=http://localhost:8099/jwt-practice/welcome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"realms",
+						"Dev",
+						"protocol",
+						"openid-connect",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "code",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "client_id",
+							"value": "TestClient_2",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "state",
+							"value": "1234jklmnopqrst$$$$",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8099/jwt-practice/welcome",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

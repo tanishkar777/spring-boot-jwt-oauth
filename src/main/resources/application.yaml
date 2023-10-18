@@ -1,0 +1,15 @@
+server:
+  port: 8099
+#spring:
+ #security:
+   #user.name: user1
+   #user.password : password123
+    
+    
+spring:  
+  security:
+     oauth2:
+       resourceserver:
+           jwt:
+             jwk-set-uri:  http://localhost:8085/realms/Dev/protocol/openid-connect/certs
+ 
